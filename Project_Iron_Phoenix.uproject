@@ -18,6 +18,11 @@
 		{
 			"Name": "NiagaraSimCaching",
 			"Enabled": true
+		},
+		{
+			"Name": "EZDOF_Plugin",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/a5ffec1762c74e7281594e48b35bee59"
 		}
 	]
 }
