@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{0052fd9f-8892-4346-98ce-c03e12b8cfe3}">
+		<property name="name">
+			<value>speed_barrelroll</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b2dfb9d3-cce0-4edc-815c-fe97d7d8d3f5}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ccffe3be-a2fe-41af-8a29-4e129fce49f3}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ccffe3be-a2fe-41af-8a29-4e129fce49f3}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

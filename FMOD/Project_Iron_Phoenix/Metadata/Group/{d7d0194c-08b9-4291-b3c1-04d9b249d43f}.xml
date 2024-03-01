@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{d7d0194c-08b9-4291-b3c1-04d9b249d43f}">
+		<property name="color">
+			<value>Blue Light 2</value>
+		</property>
+		<property name="name">
+			<value>COMBAT</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{0b2dfac7-3998-4335-b162-6d86536406bf}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{f53526dc-ab11-41c2-9e9c-a23d227466ab}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{ca5ddf34-a372-4ce9-a697-4bf28877730e}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{0b2dfac7-3998-4335-b162-6d86536406bf}">
+		<relationship name="effects">
+			<destination>{c605eefd-aa50-4497-86d6-9e9adb30795a}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{f53526dc-ab11-41c2-9e9c-a23d227466ab}" />
+	<object class="MixerBusFader" id="{c605eefd-aa50-4497-86d6-9e9adb30795a}" />
+</objects>

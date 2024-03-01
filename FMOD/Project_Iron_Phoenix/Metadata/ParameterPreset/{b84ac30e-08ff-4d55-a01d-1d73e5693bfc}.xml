@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b84ac30e-08ff-4d55-a01d-1d73e5693bfc}">
+		<property name="name">
+			<value>speed_strafe</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b2dfb9d3-cce0-4edc-815c-fe97d7d8d3f5}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{07126d6b-6bb5-451b-a399-7daec3169fee}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{07126d6b-6bb5-451b-a399-7daec3169fee}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

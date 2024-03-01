@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{1dbe611e-17c0-4f6b-9b4a-624fd88b52bb}">
+		<property name="name">
+			<value>speed_backwards</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b2dfb9d3-cce0-4edc-815c-fe97d7d8d3f5}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d209d720-c548-4cf0-8645-6c2f8e4f0d0d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d209d720-c548-4cf0-8645-6c2f8e4f0d0d}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
