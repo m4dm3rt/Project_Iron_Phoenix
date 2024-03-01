@@ -25,6 +25,12 @@
 	</object>
 	<object class="MixerBusPanner" id="{559d7645-19b5-4df0-92bf-fa505018a956}" />
 	<object class="SFXReverbEffect" id="{588e186d-e235-4217-a5a2-685b280268cd}">
+		<property name="earlyDelay">
+			<value>11.5</value>
+		</property>
+		<property name="diffusion">
+			<value>48.5</value>
+		</property>
 		<property name="wetLevel">
 			<value>0</value>
 		</property>
