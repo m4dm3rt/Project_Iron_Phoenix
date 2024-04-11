@@ -1,48 +1,42 @@
+ï»¿
 
 
-
-#include "SingleplayerCharacter.h"
+#include "SingleplayerPawn.h"
 
 // Sets default values
-ASingleplayerCharacter::ASingleplayerCharacter()
+ASingleplayerPawn::ASingleplayerPawn()
 {
- 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+    // Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+    PrimaryActorTick.bCanEverTick = true;
 
 }
 
 // Called when the game starts or when spawned
-void ASingleplayerCharacter::BeginPlay()
+void ASingleplayerPawn::BeginPlay()
 {
-	Super::BeginPlay();
-	
+    Super::BeginPlay();
+
 }
 
 // Called every frame
-void ASingleplayerCharacter::Tick(float DeltaTime)
+void ASingleplayerPawn::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    // Überprüfen, ob sich der Charakter nach vorne bewegt
-    if (MoveForwardAxis > 0.0f)
-    {
-        // Drucken Sie eine Nachricht in die Konsole
-        UE_LOG(LogTemp, Warning, TEXT("Charakter bewegt sich nach vorne!"));
-    }
 }
 
 
 // Called to bind functionality to input
-void ASingleplayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void ASingleplayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
 
     // Bind axis events
-    PlayerInputComponent->BindAxis("MoveForward", this, &ASingleplayerCharacter::MoveForward);
-    PlayerInputComponent->BindAxis("MoveRight", this, &ASingleplayerCharacter::MoveRight);
+    PlayerInputComponent->BindAxis("MoveForward", this, &ASingleplayerPawn::MoveForward);
+    PlayerInputComponent->BindAxis("MoveRight", this, &ASingleplayerPawn::MoveRight);
 }
 
-void ASingleplayerCharacter::MoveForward(float Value)
+void ASingleplayerPawn::MoveForward(float Value)
 {
     // Bewegen Sie den Charakter nach vorne basierend auf dem Eingabewert
     FVector Direction = GetActorForwardVector();
@@ -55,14 +49,14 @@ void ASingleplayerCharacter::MoveForward(float Value)
     }
 }
 
-void ASingleplayerCharacter::MoveRight(float Value)
+void ASingleplayerPawn::MoveRight(float Value)
 {
     // Bewegen Sie den Charakter nach rechts basierend auf dem Eingabewert
     FVector Direction = GetActorRightVector();
     AddMovementInput(Direction, Value);
 }
 
-void ASingleplayerCharacter::SpawnActor()
+void ASingleplayerPawn::SpawnActor()
 {
     FActorSpawnParameters spawnParams;
     spawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
