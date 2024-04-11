@@ -4,16 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "SingleplayerCharacter.generated.h"
+#include "SingleplayerPawn.generated.h"
 
 UCLASS()
-class PROJECT_IRON_PHOENIX_API ASingleplayerCharacter : public APawn
+class PROJECT_IRON_PHOENIX_API ASingleplayerPawn : public APawn
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this pawn's properties
-	ASingleplayerCharacter();
+	ASingleplayerPawn();
 
 	UFUNCTION(BlueprintCallable)
 	void SpawnActor();
@@ -25,7 +25,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Player|Movement|General")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player|Movement|General")
 	float ThrustVelocity = 7000.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player|Movement|General")
@@ -278,14 +278,14 @@ protected:
 	int NumberOfClicksLeft = 0;
 
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-		// Deklaration der Funktionen für die Bewegung
+	// Deklaration der Funktionen für die Bewegung
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void MoveUp(float Value);
