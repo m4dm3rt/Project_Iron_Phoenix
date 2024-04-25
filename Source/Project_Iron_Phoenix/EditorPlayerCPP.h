@@ -7,7 +7,7 @@
 #include "EditorPlayer.generated.h"
 
 UCLASS()
-class PROJECT_IRON_PHOENIX_API AEditorPlayer : public APawn
+class PROJECT_IRON_PHOENIX_API AEditorPlayerCPP : public APawn
 {
 	GENERATED_BODY()
 
