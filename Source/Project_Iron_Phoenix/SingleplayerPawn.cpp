@@ -36,3 +36,15 @@ void ASingleplayerPawn::ApplyImpulseToCapsule(FVector Impulse)
         CapsuleComponent->AddImpulse(Impulse);
     }
 }
+
+void ASingleplayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+    Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+    // Hier kannst du die Eingabeaktionen des Spielers binden
+}
+
+void ASingleplayerPawn::SpawnActor()
+{
+    // Hier implementierst du deine Logik für das Erzeugen eines Actors
+}
