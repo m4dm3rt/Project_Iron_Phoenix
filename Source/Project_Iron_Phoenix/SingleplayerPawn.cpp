@@ -1,65 +1,38 @@
-﻿
-
-
-#include "SingleplayerPawn.h"
+﻿#include "SingleplayerPawn.h"
 
 // Sets default values
 ASingleplayerPawn::ASingleplayerPawn()
 {
-    // Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+    // Set this pawn to call Tick() every frame
     PrimaryActorTick.bCanEverTick = true;
 
+    // Erstellen und anhängen der Kapselkollisionskomponente
+    CapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CapsuleComponent"));
+    RootComponent = CapsuleComponent;
+
+    // Erstellen der FloatingPawnMovement-Komponente und setzen des aktualisierten Components
+    FloatingMovement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("FloatingMovement"));
+    FloatingMovement->SetUpdatedComponent(CapsuleComponent);
 }
 
 // Called when the game starts or when spawned
 void ASingleplayerPawn::BeginPlay()
 {
     Super::BeginPlay();
-
 }
 
 // Called every frame
 void ASingleplayerPawn::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
-
 }
 
 
-// Called to bind functionality to input
-void ASingleplayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void ASingleplayerPawn::ApplyImpulseToCapsule(FVector Impulse)
 {
-    Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-    // Bind axis events
-    PlayerInputComponent->BindAxis("MoveForward", this, &ASingleplayerPawn::MoveForward);
-    PlayerInputComponent->BindAxis("MoveRight", this, &ASingleplayerPawn::MoveRight);
-}
-
-void ASingleplayerPawn::MoveForward(float Value)
-{
-    // Bewegen Sie den Charakter nach vorne basierend auf dem Eingabewert
-    FVector Direction = GetActorForwardVector();
-    AddMovementInput(Direction, Value);
-
-    // Wenn der Eingabewert nicht null ist, geben Sie eine Nachricht aus
-    if (Value != 0.0f)
+    // Überprüfen, ob die Kapselkollisionskomponente gültig ist
+    if (CapsuleComponent)
     {
-        UE_LOG(LogTemp, Warning, TEXT("Charakter bewegt sich nach vorne!"));
+        CapsuleComponent->AddImpulse(Impulse);
     }
-}
-
-void ASingleplayerPawn::MoveRight(float Value)
-{
-    // Bewegen Sie den Charakter nach rechts basierend auf dem Eingabewert
-    FVector Direction = GetActorRightVector();
-    AddMovementInput(Direction, Value);
-}
-
-void ASingleplayerPawn::SpawnActor()
-{
-    FActorSpawnParameters spawnParams;
-    spawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
-
-    GetWorld()->SpawnActor<AActor>(BPToSpawn, GetActorTransform(), spawnParams);
 }
