@@ -1,9 +1,9 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "GameFramework/FloatingPawnMovement.h"
+#include "Components/CapsuleComponent.h"
 #include "SingleplayerPawn.generated.h"
 
 UCLASS()
@@ -21,9 +21,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AActor> BPToSpawn;
 
+    UFUNCTION(BlueprintCallable)
+    void ApplyImpulseToCapsule(FVector Impulse);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+    UFloatingPawnMovement* FloatingMovement;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player|Movement|General")
 	float ThrustVelocity = 7000.0f;
@@ -277,6 +283,8 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Backend|Conditions")
 	int NumberOfClicksLeft = 0;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UCapsuleComponent* CapsuleComponent;
 
 public:
 	// Called every frame
@@ -285,7 +293,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	// Deklaration der Funktionen für die Bewegung
+	// Deklaration der Funktionen fï¿½r die Bewegung
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void MoveUp(float Value);
