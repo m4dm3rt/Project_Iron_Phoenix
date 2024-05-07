@@ -21,8 +21,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AActor> BPToSpawn;
 
-    UFUNCTION(BlueprintCallable, Category="Movement")
-    void ApplyImpulseToCapsule(FVector Impulse);
+	UFUNCTION(BlueprintCallable, Category="Movement")
+	void ApplyImpulseToCapsule(FVector AxisValues);
+
 
 protected:
 	// Called when the game starts or when spawned

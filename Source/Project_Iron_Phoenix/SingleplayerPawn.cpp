@@ -27,13 +27,21 @@ void ASingleplayerPawn::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 }
 
-void ASingleplayerPawn::ApplyImpulseToCapsule(FVector Impulse)
+void ASingleplayerPawn::ApplyImpulseToCapsule(FVector AxisValues)
 {
     if (CapsuleComponent)
     {
-        // Berechnen der Kraft als Geschwindigkeitsänderung (Acceleration), Masse wird ignoriert
-        FVector Force = Impulse / GetWorld()->GetDeltaSeconds();
+        // Get the actor's forward, right, and up vectors
+        FVector Forward = GetActorForwardVector();
+        FVector Right = GetActorRightVector();
+        FVector Up = GetActorUpVector();
 
+        // Calculate the force as a velocity change (Acceleration), mass is ignored
+        FVector Force = (Forward * MoveForwardAxis + Right * MoveRightAxis + Up * MoveUpAxis) / GetWorld()->GetDeltaSeconds();
+
+        Force *= 10.0f;
+
+        // Apply the force as acceleration
         CapsuleComponent->AddForce(Force, NAME_None, true);
     }
 }
@@ -42,8 +50,26 @@ void ASingleplayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-    // Hier kannst du die Eingabeaktionen des Spielers binden
+    PlayerInputComponent->BindAxis("MoveForward", this, &ASingleplayerPawn::MoveForward);
+    PlayerInputComponent->BindAxis("MoveRight", this, &ASingleplayerPawn::MoveRight);
+    PlayerInputComponent->BindAxis("MoveUp", this, &ASingleplayerPawn::MoveUp);
 }
+
+void ASingleplayerPawn::MoveForward(float Value)
+{
+    MoveForwardAxis = Value;
+}
+
+void ASingleplayerPawn::MoveRight(float Value)
+{
+    MoveRightAxis = Value;
+}
+
+void ASingleplayerPawn::MoveUp(float Value)
+{
+    MoveUpAxis = Value;
+}
+
 
 void ASingleplayerPawn::SpawnActor()
 {
