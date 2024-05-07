@@ -21,7 +21,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AActor> BPToSpawn;
 
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category="Movement")
     void ApplyImpulseToCapsule(FVector Impulse);
 
 protected:
