@@ -27,13 +27,14 @@ void ASingleplayerPawn::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 }
 
-
 void ASingleplayerPawn::ApplyImpulseToCapsule(FVector Impulse)
 {
-    // Überprüfen, ob die Kapselkollisionskomponente gültig ist
     if (CapsuleComponent)
     {
-        CapsuleComponent->AddImpulse(Impulse);
+        // Berechnen der Kraft als Geschwindigkeitsänderung (Acceleration), Masse wird ignoriert
+        FVector Force = Impulse / GetWorld()->GetDeltaSeconds();
+
+        CapsuleComponent->AddForce(Force, NAME_None, true);
     }
 }
 
@@ -46,5 +47,9 @@ void ASingleplayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 
 void ASingleplayerPawn::SpawnActor()
 {
-    // Hier implementierst du deine Logik für das Erzeugen eines Actors
+    FActorSpawnParameters spawnParams;
+    spawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
+    GetWorld()->SpawnActor<AActor>(BPToSpawn, GetActorTransform(), spawnParams);
 }
+
