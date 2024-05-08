@@ -22,7 +22,7 @@ public:
 	TSubclassOf<AActor> BPToSpawn;
 
 	UFUNCTION(BlueprintCallable, Category="Movement")
-	void ApplyImpulseToCapsule(FVector AxisValues);
+	void ApplyImpulseToCapsule();
 
 
 protected:

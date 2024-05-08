@@ -27,7 +27,7 @@ void ASingleplayerPawn::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 }
 
-void ASingleplayerPawn::ApplyImpulseToCapsule(FVector AxisValues)
+void ASingleplayerPawn::ApplyImpulseToCapsule()
 {
     if (CapsuleComponent)
     {
