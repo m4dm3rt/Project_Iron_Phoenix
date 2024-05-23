@@ -24,6 +24,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Movement")
 	void ApplyImpulseToCapsule();
 
+    UFUNCTION(BlueprintCallable, Category = "CameraMovement")
+    void AddCapsuleYawInput(float Value);
+
+    UFUNCTION(BlueprintCallable, Category = "CameraMovement")
+    void AddCapsulePitchInput(float Value);
 
 protected:
 	// Called when the game starts or when spawned
