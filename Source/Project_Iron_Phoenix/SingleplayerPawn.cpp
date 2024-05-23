@@ -1,4 +1,5 @@
 ﻿#include "SingleplayerPawn.h"
+#include "Camera/CameraComponent.h"
 
 // Sets default values
 ASingleplayerPawn::ASingleplayerPawn()
@@ -6,11 +7,11 @@ ASingleplayerPawn::ASingleplayerPawn()
     // Set this pawn to call Tick() every frame
     PrimaryActorTick.bCanEverTick = true;
 
-    // Erstellen und anhängen der Kapselkollisionskomponente
+    // Create and attach the capsule collision component
     CapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CapsuleComponent"));
     RootComponent = CapsuleComponent;
 
-    // Erstellen der FloatingPawnMovement-Komponente und setzen des aktualisierten Components
+    // Create the FloatingPawnMovement component and set the updated component
     FloatingMovement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("FloatingMovement"));
     FloatingMovement->SetUpdatedComponent(CapsuleComponent);
 }
@@ -53,6 +54,8 @@ void ASingleplayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
     PlayerInputComponent->BindAxis("MoveForward", this, &ASingleplayerPawn::MoveForward);
     PlayerInputComponent->BindAxis("MoveRight", this, &ASingleplayerPawn::MoveRight);
     PlayerInputComponent->BindAxis("MoveUp", this, &ASingleplayerPawn::MoveUp);
+    PlayerInputComponent->BindAxis("Turn", this, &ASingleplayerPawn::AddCapsuleYawInput);
+    PlayerInputComponent->BindAxis("LookUp", this, &ASingleplayerPawn::AddCapsulePitchInput);
 }
 
 void ASingleplayerPawn::MoveForward(float Value)
@@ -70,7 +73,6 @@ void ASingleplayerPawn::MoveUp(float Value)
     MoveUpAxis = Value;
 }
 
-
 void ASingleplayerPawn::SpawnActor()
 {
     FActorSpawnParameters spawnParams;
@@ -79,3 +81,40 @@ void ASingleplayerPawn::SpawnActor()
     GetWorld()->SpawnActor<AActor>(BPToSpawn, GetActorTransform(), spawnParams);
 }
 
+void ASingleplayerPawn::AddCapsuleYawInput(float Value)
+{
+    if (Value != 0.0f)
+    {
+        FRotator CurrentRotation = GetActorRotation();
+        FQuat CurrentQuat = CurrentRotation.Quaternion();
+
+        // Create a quaternion for the yaw rotation
+        FQuat YawQuat = FQuat(FVector::UpVector, FMath::DegreesToRadians(Value));
+
+        // Combine the current quaternion with the yaw rotation quaternion
+        FQuat NewQuat = YawQuat * CurrentQuat;
+
+        // Convert the new quaternion back to a rotator and apply it
+        FRotator NewRotation = NewQuat.Rotator();
+        SetActorRotation(NewRotation);
+    }
+}
+
+void ASingleplayerPawn::AddCapsulePitchInput(float Value)
+{
+    if (Value != 0.0f)
+    {
+        FRotator CurrentRotation = GetActorRotation();
+        FQuat CurrentQuat = CurrentRotation.Quaternion();
+
+        // Create a quaternion for the pitch rotation
+        FQuat PitchQuat = FQuat(FVector::RightVector, FMath::DegreesToRadians(Value));
+
+        // Combine the current quaternion with the pitch rotation quaternion
+        FQuat NewQuat = CurrentQuat * PitchQuat;
+
+        // Convert the new quaternion back to a rotator and apply it
+        FRotator NewRotation = NewQuat.Rotator();
+        SetActorRotation(NewRotation);
+    }
+}
