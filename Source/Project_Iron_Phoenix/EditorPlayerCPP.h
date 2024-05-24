@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "Components/StaticMeshComponent.h"
 #include "EditorPlayerCPP.generated.h"
 
 UCLASS()
@@ -20,6 +21,16 @@ public:
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	// Function to set visibility of the target components
+
+    UFUNCTION(BlueprintCallable, Category = "Visibility")
+    void SetComponentsVisibility(TArray<USceneComponent*> TargetComponents, bool bVisible);
+	
+	//Components
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components")	
+    TArray<UStaticMeshComponent*> MeshComponents;
 
 	// Variables inside the EditorPlayer
 	// Floats

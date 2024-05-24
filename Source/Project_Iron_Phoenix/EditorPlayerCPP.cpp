@@ -25,3 +25,13 @@ void AEditorPlayerCPP::Tick(float DeltaTime)
 
 }
 
+void AEditorPlayerCPP::SetComponentsVisibility(TArray<USceneComponent*> TargetComponents, bool bVisible)
+{
+    for (USceneComponent* Component : TargetComponents)
+    {
+        if (Component)
+        {
+            Component->SetVisibility(bVisible, true);
+        }
+    }
+}
