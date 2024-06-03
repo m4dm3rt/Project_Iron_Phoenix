@@ -26,9 +26,5 @@ public:
 
 	// Function to spawn a projectile, callable from Blueprint
 	UFUNCTION(BlueprintCallable, Category = "Projectile")
-	void SpawnProjectile();
-
-	// Projectile class to spawn
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Projectile")
-	TSubclassOf<AActor> ProjectileClass;
+	void SpawnProjectile(TSubclassOf<AActor> ProjectileClass);
 };

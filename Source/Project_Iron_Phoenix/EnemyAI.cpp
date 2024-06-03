@@ -28,7 +28,7 @@ void AEnemyAI::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 }
 
 // Function to spawn a projectile
-void AEnemyAI::SpawnProjectile()
+void AEnemyAI::SpawnProjectile(TSubclassOf<AActor> ProjectileClass)
 {
 	if (ProjectileClass)
 	{
