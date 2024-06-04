@@ -39,3 +39,9 @@ void AEnemyAI::SpawnProjectile(TSubclassOf<AActor> ProjectileClass)
 		GetWorld()->SpawnActor<AActor>(ProjectileClass, Location, Rotation, SpawnParams);
 	}
 }
+
+// Function to move the pawn
+void AEnemyAI::MovePawn(FVector WorldDirection, float ScaleValue)
+{
+	AddMovementInput(WorldDirection, ScaleValue);
+}
