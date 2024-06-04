@@ -27,4 +27,8 @@ public:
 	// Function to spawn a projectile, callable from Blueprint
 	UFUNCTION(BlueprintCallable, Category = "Projectile")
 	void SpawnProjectile(TSubclassOf<AActor> ProjectileClass);
+
+	// Function to move the pawn, callable from Blueprint
+	UFUNCTION(BlueprintCallable, Category = "Movement")
+	void MovePawn(FVector WorldDirection, float ScaleValue);
 };
