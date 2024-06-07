@@ -10,10 +10,6 @@ ASingleplayerPawn::ASingleplayerPawn()
     // Create and attach the capsule collision component
     CapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CapsuleComponent"));
     RootComponent = CapsuleComponent;
-
-    // Create the FloatingPawnMovement component and set the updated component
-    FloatingMovement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("FloatingMovement"));
-    FloatingMovement->SetUpdatedComponent(CapsuleComponent);
 }
 
 // Called when the game starts or when spawned
@@ -42,8 +38,28 @@ void ASingleplayerPawn::ApplyImpulseToCapsule()
 
         Force *= 10.0f;
 
-        // Apply the force as acceleration
-        CapsuleComponent->AddForce(Force, NAME_None, true);
+        // Calculate damping force
+        FVector CurrentVelocity = CapsuleComponent->GetPhysicsLinearVelocity();
+        FVector DampingForce = FVector::ZeroVector;
+
+        if (MoveForwardAxis == 0.0f)
+        {
+            DampingForce -= (Forward * CurrentVelocity.ProjectOnTo(Forward)).Size() * Forward;
+        }
+        if (MoveRightAxis == 0.0f)
+        {
+            DampingForce -= (Right * CurrentVelocity.ProjectOnTo(Right)).Size() * Right;
+        }
+        if (MoveUpAxis == 0.0f)
+        {
+            DampingForce -= (Up * CurrentVelocity.ProjectOnTo(Up)).Size() * Up;
+        }
+
+        DampingForce *= DampingFactor;
+
+        // Apply the net force (movement force + damping force)
+        FVector NetForce = Force + DampingForce;
+        CapsuleComponent->AddForce(NetForce, NAME_None, true);
     }
 }
 
@@ -92,7 +108,10 @@ void ASingleplayerPawn::AddCapsuleYawInput(float Value)
         FQuat YawQuat = FQuat(FVector::UpVector, FMath::DegreesToRadians(Value));
 
         // Combine the current quaternion with the yaw rotation quaternion
-        FQuat NewQuat = YawQuat * CurrentQuat;
+        FQuat NewQuat = CurrentQuat * YawQuat;
+
+        // Normalize the quaternion to avoid cumulative errors
+        NewQuat.Normalize();
 
         // Convert the new quaternion back to a rotator and apply it
         FRotator NewRotation = NewQuat.Rotator();
@@ -112,6 +131,9 @@ void ASingleplayerPawn::AddCapsulePitchInput(float Value)
 
         // Combine the current quaternion with the pitch rotation quaternion
         FQuat NewQuat = CurrentQuat * PitchQuat;
+
+        // Normalize the quaternion to avoid cumulative errors
+        NewQuat.Normalize();
 
         // Convert the new quaternion back to a rotator and apply it
         FRotator NewRotation = NewQuat.Rotator();

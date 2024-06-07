@@ -2,7 +2,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "GameFramework/FloatingPawnMovement.h"
 #include "Components/CapsuleComponent.h"
 #include "SingleplayerPawn.generated.h"
 
@@ -10,6 +9,10 @@ UCLASS()
 class PROJECT_IRON_PHOENIX_API ASingleplayerPawn : public APawn
 {
 	GENERATED_BODY()
+
+
+private:
+    float DampingFactor = 5.0f;  // Adjust this value as needed
 
 public:
 	// Sets default values for this pawn's properties
@@ -33,9 +36,6 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-    UFloatingPawnMovement* FloatingMovement;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player|Movement|General")
 	float ThrustVelocity = 7000.0f;
