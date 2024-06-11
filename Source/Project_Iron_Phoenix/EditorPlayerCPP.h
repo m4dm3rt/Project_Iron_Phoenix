@@ -37,590 +37,455 @@ public:
 	// Health
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Health")
-	float Health = 0.0f;
+	float HealthCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Health")
-	float HealthRegeneration = 0.0f;
+	float HealthRegenerationCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Health")
-	float HealthRegenDelay = 0.0f;
+	float HealthRegenDelayCPP = 0.0f;
 
 	// Shield
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Shield")
-	float Shield = 0.0f;
+	float ShieldCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Shield")
-	float ShieldRegeneration = 0.0f;
+	float ShieldRegenerationCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Shield")
-	float ShieldRegenDelay = 0.0f;
+	float ShieldRegenDelayCPP = 0.0f;
 
 	// Speed
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Speed")
-	float Speed = 0.0f;
+	float SpeedCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Speed")
-	float StrafeSpeed = 0.0f;
+	float StrafeSpeedCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Speed")
-	float TurnSpeed = 0.0f;
+	float TurnSpeedCPP = 0.0f;
 
 	// Roll
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Speed")
-	float Roll = 0.0f;
+	float RollCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Speed")
-	float RollCooldown = 0.0f;
+	float RollCooldownCPP = 0.0f;
 
 	// Boost
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Speed")
-	float Boost = 0.0f;
+	float BoostCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Speed")
-	float BoostMax = 0.0f;
+	float BoostMaxCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Speed")
-	float BoostCooldown = 0.0f;
+	float BoostCooldownCPP = 0.0f;
 
 	// Kinetic Weapon
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|KineticWeapon")
-	float KineticDamage = 0.0f;
+	float KineticDamageCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|KineticWeapon")
-	float KineticRange = 0.0f;
+	float KineticRangeCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|KineticWeapon")
-	float KineticFireRate = 0.0f;
+	float KineticFireRateCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|KineticWeapon")
-	float KineticHeat = 0.0f;
+	float KineticHeatCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|KineticWeapon")
-	float KineticCooling = 0.0f;
+	float KineticCoolingCPP = 0.0f;
 
 	// Laser Weapon
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|LaserWeapon")
-	float LaserDamage = 0.0f;
+	float LaserDamageCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|LaserWeapon")
-	float LaserRange = 0.0f;
+	float LaserRangeCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|LaserWeapon")
-	float LaserFireRate = 0.0f;
+	float LaserFireRateCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|LaserWeapon")
-	float LaserHeat = 0.0f;
+	float LaserHeatCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|LaserWeapon")
-	float LaserCooling = 0.0f;
+	float LaserCoolingCPP = 0.0f;
 
 	// Multipliers
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float HealthMultiplier = 2.0f;
+	float HealthMultiplierCPP = 2.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float HealthRegenMultiplier = 333.0f;
+	float HealthRegenMultiplierCPP = 333.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float HealthRegenDelayMultiplier = 1.1f;
+	float HealthRegenDelayMultiplierCPP = 1.1f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float ShieldMultiplier = 2.0f;
+	float ShieldMultiplierCPP = 2.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float ShieldRegenMultiplier = 125.0f;
+	float ShieldRegenMultiplierCPP = 125.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float ShieldRegenDelayMultiplier = 12.5f;
+	float ShieldRegenDelayMultiplierCPP = 12.5f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float SpeedMultiplier = 140.0f;
+	float SpeedMultiplierCPP = 140.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float StrafeSpeedMultiplier = 80.0f;
+	float StrafeSpeedMultiplierCPP = 80.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float RollMultiplier = 33.2f;
+	float RollMultiplierCPP = 33.2f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float TurnSpeedMultiplier = 0.04f;
+	float TurnSpeedMultiplierCPP = 0.04f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float BoostMultiplier = 28.0f;
+	float BoostMultiplierCPP = 28.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float BoostMaxMultiplier = 2.0f;
+	float BoostMaxMultiplierCPP = 2.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float BoostCooldownMultiplier = 10.0f;
+	float BoostCooldownMultiplierCPP = 10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float RollCooldownMultiplier = 8.3f;
+	float DashCooldownMultiplierCPP = 8.3f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float MissileCooldownMultiplier = 3.11f;
-
-	// Saved Stats 
-	// Health - Saved 
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Saved|Health")
-	float SavedHealth = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Saved|Health")
-	float SavedHealthRegeneration = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Saved|Health")
-	float SavedHealthRegenDelay = 0.0f;
-
-	// Shield - Saved
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|Shield")
-	float SavedShield = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|Shield")
-	float SavedShieldRegeneration = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|Shield")
-	float SavedShieldRegenDelay = 0.0f;
-
-	// Speed - Saved
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|Speed")
-	float SavedSpeed = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|Speed")
-	float SavedStrafe = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|Speed")
-	float SavedRoll = 0.0f;
-
-	// Kinetic Weapon - Saved
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|KineticWeapon")
-	float SavedKineticDamage = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|KineticWeapon")
-	float SavedKineticRange = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|KineticWeapon")
-	float SavedKineticFireRate = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|KineticWeapon")
-	float SavedKineticHeat = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|KineticWeapon")
-	float SavedKineticCooling = 0.0f;
-
-	// Laser Weapon - Saved
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|LaserWeapon")
-	float SavedLaserDamage = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|LaserWeapon")
-	float SavedLaserRange = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|LaserWeapon")
-	float SavedLaserFireRate = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|LaserWeapon")
-	float SavedLaserHeat = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Saved|LaserWeapon")
-	float SavedLaserCooling = 0.0f;
+	float MissileCooldownMultiplierCPP = 3.11f;
 
 	// Ship Parts
 	// Bodies
 	// Light Body
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Health")
-	float LightBHealth = 50.0f;
+	float LightBHealthCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Health")
-	float LightBRegeneration = 25.0f;
+	float LightBRegenerationCPP = 25.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Health")
-	float LightBRegendelay = 75.0f;
+	float LightBRegendelayCPP = 75.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Shield")
-	float LightBShield = 50.0f;
+	float LightBShieldCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Shield")
-	float LightBShieldRegeneration = 50.0f;
+	float LightBShieldRegenerationCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Shield")
-	float LightBShieldRegenDelay = 50.0f;
+	float LightBShieldRegenDelayCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Speed")
-	float LightBSpeed = 10.0f;
+	float LightBSpeedCPP = 10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Speed")
-	float LightBStrafe = 10.0f;
+	float LightBStrafeCPP = 10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Speed")
-	float LightBRoll = 10.0f;
+	float LightBRollCPP = 10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Missile")
-	float LightBMissileCooldown = 40.0f;
+	float LightBMissileCooldownCPP = 40.0f;
 
-	//Heavy Body
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Health")
-	float HeavyBHealth = 60.0f;
+	// Heavy Body
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Health")
-	float HeavyBRegeneration = 50.0f;
+	float HeavyBHealthCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Health")
-	float HeavyBRegendelay = 50.0f;
+	float HeavyBRegenerationCPP = 50.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Health")
+	float HeavyBRegendelayCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Shield")
-	float HeavyBShield = 60.0f;
+	float HeavyBShieldCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Shield")
-	float HeavyBShieldRegeneration = 50.0f;
+	float HeavyBShieldRegenerationCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Shield")
-	float HeavyBShieldRegenDelay = 60.0f;
+	float HeavyBShieldRegenDelayCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Speed")
-	float HeavyBSpeed = 0.0f;
+	float HeavyBSpeedCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Speed")
-	float HeavyBStrafe = 5.0f;
+	float HeavyBStrafeCPP = 5.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Speed")
-	float HeavyBRoll = 0.0f;
+	float HeavyBRollCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Missile")
-	float HeavyBMissileCooldown = 25.0f;
+	float HeavyBMissileCooldownCPP = 25.0f;
 
 	// Tank Body
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Health")
-	float TankBHealth = 80.0f;
+	float TankBHealthCPP = 80.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Health")
-	float TankBRegeneration = 75.0f;
+	float TankBRegenerationCPP = 75.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Health")
-	float TankBRegendelay = 25.0f;
+	float TankBRegendelayCPP = 25.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Shield")
-	float TankBShield = 80.0f;
+	float TankBShieldCPP = 80.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Shield")
-	float TankBShieldRegeneration = 70.0f;
+	float TankBShieldRegenerationCPP = 70.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Shield")
-	float TankBShieldRegenDelay = 40.0f;
+	float TankBShieldRegenDelayCPP = 40.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Speed")
-	float TankBSpeed = -10.0f;
+	float TankBSpeedCPP = -10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Speed")
-	float TankBStrafe = -10.0f;
+	float TankBStrafeCPP = -10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Speed")
-	float TankBRoll = -10.0f;
+	float TankBRollCPP = -10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Missile")
-	float TankBMissileCooldown = 31.0f;
+	float TankBMissileCooldownCPP = 31.0f;
 
 	// Engines
 	// Booster Engine
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|BoosterEngine|Speed")
-	float BoosterESpeed = 0.0f;
+	float BoosterESpeedCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|BoosterEngine|Speed")
-	float BoosterEStrafe = 50.0f;
+	float BoosterEStrafeCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|BoosterEngine|Speed")
-	float BoosterERoll = 50.0f;
+	float BoosterERollCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|BoosterEngine|Speed")
-	float BoosterEBoost = 60.0f;
+	float BoosterEBoostCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|BoosterEngine|Speed")
-	float BoosterEBoostMax = 45.0f;
+	float BoosterEBoostMaxCPP = 45.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|BoosterEngine|Speed")
-	float BoosterEBoostCooldown = 60.0f;
+	float BoosterEBoostCooldownCPP = 60.0f;
 
 	// Power Engine
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|PowerEngine|Speed")
-	float PowerESpeed = 15.0f;
+	float PowerESpeedCPP = 15.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|PowerEngine|Speed")
-	float PowerEStrafe = 60.0f;
+	float PowerEStrafeCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|PowerEngine|Speed")
-	float PowerERoll = 60.0f;
+	float PowerERollCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|PowerEngine|Speed")
-	float PowerEBoost = 35.0f;
+	float PowerEBoostCPP = 35.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|PowerEngine|Speed")
-	float PowerEBoostMax = 60.0f;
+	float PowerEBoostMaxCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|PowerEngine|Speed")
-	float PowerEBoostCooldown = 80.0f;
+	float PowerEBoostCooldownCPP = 80.0f;
 
 	// Rectan Engine
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|RectanEngine|Speed")
-	float RectanESpeed = 10.0f;
+	float RectanESpeedCPP = 10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|RectanEngine|Speed")
-	float RectanEStrafe = 70.0f;
+	float RectanEStrafeCPP = 70.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|RectanEngine|Speed")
-	float RectanERoll = 70.0f;
+	float RectanERollCPP = 70.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|RectanEngine|Speed")
-	float RectanEBoost = 50.0f;
+	float RectanEBoostCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|RectanEngine|Speed")
-	float RectanEBoostMax = 40.0f;
+	float RectanEBoostMaxCPP = 40.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Engines|RectanEngine|Speed")
-	float RectanEBoostCooldown = 80.0f;
+	float RectanEBoostCooldownCPP = 80.0f;
+
 
 	// Wings
-	// Hero Wings
+	// Agility Wings
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|HeroWings|Health")
-	float HeroWHealth = 10.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|AgilityWings|Health")
+	float AgilityWHealthCPP = 10.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|HeroWings|Shield")
-	float HeroWShield = 0.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|AgilityWings|Shield")
+	float AgilityWShieldCPP = 10.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|HeroWings|Shield")
-	float HeroWShieldRegeneration = 0.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|AgilityWings|Shield")
+	float AgilityWShieldRegenerationCPP = 0.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|HeroWings|Shield")
-	float HeroWShieldRegendelay = 0.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|AgilityWings|Shield")
+	float AgilityWShieldRegendelayCPP = 0.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|HeroWings|Speed")
-	float HeroWSpeed = 55.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|AgilityWings|Speed")
+	float AgilityWSpeedCPP = 55.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|HeroWings|Speed")
-	float HeroWTurnSpeed = 50.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|AgilityWings|Speed")
+	float AgilityWTurnSpeedCPP = 60.0f;
 
-	// Butterfly Wings
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|AgilityWings|Speed")
+	float AgilityWRollCPP = 40.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|ButterflyWings|Health")
-	float ButterflyWHealth = -10.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|AgilityWings|Speed")
+	float AgilityWRollCooldownCPP = 68.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|ButterflyWings|Shield")
-	float ButterflyWShield = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|ButterflyWings|Shield")
-	float ButterflyWShieldRegeneration = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|ButterflyWings|Shield")
-	float ButterflyWShieldRegendelay = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|ButterflyWings|Speed")
-	float ButterflyWSpeed = 45.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|ButterflyWings|Speed")
-	float ButterflyWTurnSpeed = 50.0f;
-
-	// GunShip Wings
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|GunshipWings|Health")
-	float GunshipWHealth = 10.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|GunshipWings|Shield")
-	float GunshipWShield = 10.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|GunshipWings|Shield")
-	float GunshipWShieldRegeneration = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|GunshipWings|Shield")
-	float GunshipWShieldRegendelay = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|GunshipWings|Speed")
-	float GunshipWSpeed = 55.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|GunshipWings|Speed")
-	float GunshipWTurnSpeed = 60.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|GunshipWings|Speed")
-	float GunshipWRoll = 40.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|GunshipWings|Speed")
-	float GunshipWRollCooldown = 68.0f;
-
-	// MegaSpeed Wings
+	// Megaspeed Wings
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|MegaspeedWings|Health")
-	float MegaspeedWHealth = -10.0f;
+	float MegaspeedWHealthCPP = -10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|MegaspeedWings|Shield")
-	float MegaspeedWShield = -10.0f;
+	float MegaspeedWShieldCPP = -10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|MegaspeedWings|Shield")
-	float MegaspeedWShieldRegeneration = 0.0f;
+	float MegaspeedWShieldRegenerationCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|MegaspeedWings|Shield")
-	float MegaspeedWShieldRegendelay = 0.0f;
+	float MegaspeedWShieldRegendelayCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|MegaspeedWings|Speed")
-	float MegaspeedWSpeed = 65.0f;
+	float MegaspeedWSpeedCPP = 65.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|MegaspeedWings|Speed")
-	float MegaspeedWTurnSpeed = 60.0f;
+	float MegaspeedWTurnSpeedCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|MegaspeedWings|Speed")
-	float MegaspeedWRoll = 40.0f;
+	float MegaspeedWRollCPP = 40.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|MegaspeedWings|Speed")
-	float MegaspeedWRollCooldown = 83.0f;
-
-	// X Wings 
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|XWings|Health")
-	float XWingsHealth = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|XWings|Shield")
-	float XWingsShield = 10.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|XWings|Shield")
-	float XWingsShieldRegeneration = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|XWings|Shield")
-	float XWingsShieldRegendelay = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|XWings|Speed")
-	float XWingsSpeed = 50.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|XWings|Speed")
-	float XWingsTurnSpeed = 80.0f;
+	float MegaspeedWRollCooldownCPP = 83.0f;
 
 	// Defense Wings
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|DefenseWings|Health")
-	float DefenseWHealth = 15.0f;
+	float DefenseWHealthCPP = 15.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|DefenseWings|Shield")
-	float DefenseWShield = 15.0f;
+	float DefenseWShieldCPP = 15.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|DefenseWings|Shield")
-	float DefenseWShieldRegeneration = 0.0f;
+	float DefenseWShieldRegenerationCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|DefenseWings|Shield")
-	float DefenseWShieldRegendelay = 0.0f;
+	float DefenseWShieldRegendelayCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|DefenseWings|Speed")
-	float DefenseWSpeed = 45.0f;
+	float DefenseWSpeedCPP = 45.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|DefenseWings|Speed")
-	float DefenseWTurnSpeed = 50.0f;
+	float DefenseWTurnSpeedCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|DefenseWings|Speed")
-	float DefenseWRoll = 30.0f;
+	float DefenseWRollCPP = 30.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|DefenseWings|Speed")
-	float MDefenseWRollCooldown = 98.0f;
+	float DefenseWRollCooldownCPP = 98.0f;
 
 	// Weapon Type and Damage
 	// Laser Battery
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserBattery")
-	float LaserBatteryDamage = 15.0f;
+	float LaserBatteryDamageCPP = 15.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserBattery")
-	float LaserBatteryRange = 75.0f;
+	float LaserBatteryRangeCPP = 75.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserBattery")
-	float LaserBatteryFireRate = 20.0f;
+	float LaserBatteryFireRateCPP = 20.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserBattery")
-	float LaserBatteryHeat = 21.0f;
+	float LaserBatteryHeatCPP = 21.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserBattery")
-	float LaserBatteryCooling = 40.0f;
+	float LaserBatteryCoolingCPP = 40.0f;
 
 	// Laser Cutter
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserCutter")
-	float LaserCutterDamage = 10.0f;
+	float LaserCutterDamageCPP = 10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserCutter")
-	float LaserCutterRange = 25.0f;
+	float LaserCutterRangeCPP = 25.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserCutter")
-	float LaserCutterFireRate = 80.0f;
+	float LaserCutterFireRateCPP = 80.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserCutter")
-	float LaserCutterHeat = 16.0f;
+	float LaserCutterHeatCPP = 16.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserCutter")
-	float LaserCutterCooling = 40.0f;
+	float LaserCutterCoolingCPP = 40.0f;
 
 	// Kinetic Canon
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticCanon")
-	float KineticCanonDamage = 50.0f;
+	float KineticCanonDamageCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticCanon")
-	float KineticCanonRange = 75.0f;
+	float KineticCanonRangeCPP = 75.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticCanon")
-	float KineticCanonFireRate = 8.0f;
+	float KineticCanonFireRateCPP = 8.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticCanon")
-	float KineticCanonHeat = 90.0f;
+	float KineticCanonHeatCPP = 90.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticCanon")
-	float KineticCanonCooling = 40.0f;
+	float KineticCanonCoolingCPP = 40.0f;
 
 	// Kinetic Minigun
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticMinigun")
-	float KineticMinigunDamage = 7.5f;
+	float KineticMinigunDamageCPP = 7.5f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticMinigun")
-	float KineticMinigunRange = 25.0f;
+	float KineticMinigunRangeCPP = 25.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticMinigun")
-	float KineticMinigunFireRate = 50.0f;
+	float KineticMinigunFireRateCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticMinigun")
-	float KineticMinigunHeat = 12.5f;
+	float KineticMinigunHeatCPP = 12.5f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticMinigun")
-	float KineticMinigunCooling = 40.0f;
+	float KineticMinigunCoolingCPP = 40.0f;
 
 	// Missile
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|Missile")
-	float MissileDamage = 0.0f;
+	float MissileDamageCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|Missile")
-	float MissileRange = 0.0f;
+	float MissileRangeCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|Missile")
-	float MissileCooldown = 0.0f;
+	float MissileCooldownCPP = 0.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|Missile")
-	float SavedMissileDamage = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|Missile")
-	float SavedMissileRange = 0.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|Missile")
-	float SavedMissileCooldown = 0.0f;
 
 	// Booleans 
 	// Config
