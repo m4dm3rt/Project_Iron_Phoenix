@@ -162,7 +162,7 @@ public:
 	float BoostCooldownMultiplierCPP = 10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
-	float DashCooldownMultiplierCPP = 8.3f;
+	float RollCooldownMultiplierCPP = 8.3f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
 	float MissileCooldownMultiplierCPP = 3.11f;
