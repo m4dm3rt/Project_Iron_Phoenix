@@ -97,12 +97,27 @@ void ASingleplayerPawn::MoveUp(float Value)
     MoveUpAxis = Value;
 }
 
-void ASingleplayerPawn::SpawnActor()
+void ASingleplayerPawn::SpawnActor(TSubclassOf<AActor> ActorToSpawn, const FTransform& SpawnTransform)
 {
-    FActorSpawnParameters spawnParams;
-    spawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+    if (ActorToSpawn)
+    {
+        FActorSpawnParameters SpawnParams;
+        SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
 
-    GetWorld()->SpawnActor<AActor>(BPToSpawn, GetActorTransform(), spawnParams);
+        AActor* SpawnedActor = GetWorld()->SpawnActor<AActor>(ActorToSpawn, SpawnTransform, SpawnParams);
+        if (SpawnedActor)
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Actor %s spawned successfully at location %s"), *SpawnedActor->GetName(), *SpawnTransform.GetLocation().ToString());
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Failed to spawn actor."));
+        }
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("ActorToSpawn is null."));
+    }
 }
 
 void ASingleplayerPawn::AddCapsuleYawInput(float Value)
