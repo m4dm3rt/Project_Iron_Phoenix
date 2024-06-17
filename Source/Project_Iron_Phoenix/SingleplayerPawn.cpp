@@ -1,4 +1,4 @@
-﻿#include "SingleplayerPawn.h"
+#include "SingleplayerPawn.h"
 #include "Camera/CameraComponent.h"
 
 // Sets default values
@@ -10,6 +10,14 @@ ASingleplayerPawn::ASingleplayerPawn()
     // Create and attach the capsule collision component
     CapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CapsuleComponent"));
     RootComponent = CapsuleComponent;
+
+    // Initialize movement axes
+    MoveForwardAxis = 0.0f;
+    MoveRightAxis = 0.0f;
+    MoveUpAxis = 0.0f;
+
+    // Initialize damping factor
+    DampingFactor = 1.0f;  // Adjust as needed
 }
 
 // Called when the game starts or when spawned
