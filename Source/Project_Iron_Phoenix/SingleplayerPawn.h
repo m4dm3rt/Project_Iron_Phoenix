@@ -18,11 +18,8 @@ public:
 	// Sets default values for this pawn's properties
 	ASingleplayerPawn();
 
-	UFUNCTION(BlueprintCallable)
-	void SpawnActor();
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TSubclassOf<AActor> BPToSpawn;
+    UFUNCTION(BlueprintCallable, Category = "Spawning")
+    void SpawnActor(TSubclassOf<AActor> ActorToSpawn, const FTransform& SpawnTransform);
 
 	UFUNCTION(BlueprintCallable, Category="Movement")
 	void ApplyImpulseToCapsule();
