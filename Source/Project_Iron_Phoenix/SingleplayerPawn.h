@@ -24,6 +24,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Movement")
 	void ApplyImpulseToCapsule();
 
+	UFUNCTION(BlueprintCallable, Category="Custom")
+    void ActorLocalRotation(FRotator DeltaRotation);
+
     UFUNCTION(BlueprintCallable, Category = "CameraMovement")
     void AddCapsuleYawInput(float Value);
 

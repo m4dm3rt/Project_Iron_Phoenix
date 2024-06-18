@@ -32,6 +32,7 @@ void ASingleplayerPawn::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 }
 
+// Apply impulse to capsule
 void ASingleplayerPawn::ApplyImpulseToCapsule()
 {
     if (CapsuleComponent)
@@ -71,6 +72,7 @@ void ASingleplayerPawn::ApplyImpulseToCapsule()
     }
 }
 
+// Bind functionality to input
 void ASingleplayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -82,6 +84,7 @@ void ASingleplayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
     PlayerInputComponent->BindAxis("LookUp", this, &ASingleplayerPawn::AddCapsulePitchInput);
 }
 
+// Movement functions
 void ASingleplayerPawn::MoveForward(float Value)
 {
     MoveForwardAxis = Value;
@@ -97,29 +100,7 @@ void ASingleplayerPawn::MoveUp(float Value)
     MoveUpAxis = Value;
 }
 
-void ASingleplayerPawn::SpawnActor(TSubclassOf<AActor> ActorToSpawn, const FTransform& SpawnTransform)
-{
-    if (ActorToSpawn)
-    {
-        FActorSpawnParameters SpawnParams;
-        SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
-
-        AActor* SpawnedActor = GetWorld()->SpawnActor<AActor>(ActorToSpawn, SpawnTransform, SpawnParams);
-        if (SpawnedActor)
-        {
-            UE_LOG(LogTemp, Warning, TEXT("Actor %s spawned successfully at location %s"), *SpawnedActor->GetName(), *SpawnTransform.GetLocation().ToString());
-        }
-        else
-        {
-            UE_LOG(LogTemp, Warning, TEXT("Failed to spawn actor."));
-        }
-    }
-    else
-    {
-        UE_LOG(LogTemp, Warning, TEXT("ActorToSpawn is null."));
-    }
-}
-
+// Custom rotation functions
 void ASingleplayerPawn::AddCapsuleYawInput(float Value)
 {
     if (Value != 0.0f)
@@ -161,5 +142,51 @@ void ASingleplayerPawn::AddCapsulePitchInput(float Value)
         // Convert the new quaternion back to a rotator and apply it
         FRotator NewRotation = NewQuat.Rotator();
         SetActorRotation(NewRotation);
+    }
+}
+
+// Add actor local rotation
+void ASingleplayerPawn::ActorLocalRotation(FRotator DeltaRotation)
+{
+    if (!DeltaRotation.IsZero())
+    {
+        // Convert the delta rotator to a quaternion
+        FQuat DeltaQuat = FQuat(DeltaRotation);
+
+        // Get the current local rotation as a quaternion
+        FQuat CurrentQuat = GetActorQuat();
+
+        // Combine the current rotation with the delta rotation
+        FQuat NewQuat = CurrentQuat * DeltaQuat;
+
+        // Normalize the quaternion to avoid cumulative errors
+        NewQuat.Normalize();
+
+        // Set the actor's rotation to the new rotation
+        SetActorRotation(NewQuat.Rotator());
+    }
+}
+
+// Function to spawn actors
+void ASingleplayerPawn::SpawnActor(TSubclassOf<AActor> ActorToSpawn, const FTransform& SpawnTransform)
+{
+    if (ActorToSpawn)
+    {
+        FActorSpawnParameters SpawnParams;
+        SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
+        AActor* SpawnedActor = GetWorld()->SpawnActor<AActor>(ActorToSpawn, SpawnTransform, SpawnParams);
+        if (SpawnedActor)
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Actor %s spawned successfully at location %s"), *SpawnedActor->GetName(), *SpawnTransform.GetLocation().ToString());
+        }
+        else
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Failed to spawn actor."));
+        }
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("ActorToSpawn is null."));
     }
 }
