@@ -1,5 +1,3 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -16,11 +14,8 @@ public:
 	// Sets default values for this pawn's properties
 	AEditorPlayerCPP();
 
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 
 	// Function to set visibility of the target components
 
@@ -31,6 +26,50 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components")	
     TArray<UStaticMeshComponent*> MeshComponents;
+
+	// Set Booleans
+
+	UFUNCTION(BlueprintCallable, Category = "Save/Load|Bodies")
+    void SetBodies(bool bLightBSelected, bool bHeavyBSelected, bool bTankBSelected);
+
+	UFUNCTION(BlueprintCallable, Category = "Save/Load|Wings")
+    void SetWings(bool bDefenseWSelected, bool bMegaSpeedWSelected, bool bAgilityWSelected);
+
+	UFUNCTION(BlueprintCallable, Category = "Save/Load|Engines")
+    void SetEngines(bool bRectanESelected, bool bPowerESelected, bool bBoosterESelected);
+
+	//Wing Events
+
+	UFUNCTION(BlueprintCallable)
+    void AgilityStats();
+
+    UFUNCTION(BlueprintCallable)
+    void DefenseStats();
+
+    UFUNCTION(BlueprintCallable)
+    void SpeedStats();
+
+	//Body Events
+
+	UFUNCTION(BlueprintCallable)
+	void HeavyBStats();
+
+    UFUNCTION(BlueprintCallable)
+ 	void LightBStats();
+
+    UFUNCTION(BlueprintCallable)
+ 	void TankBStats();
+
+	//Engine Events
+
+	UFUNCTION(BlueprintCallable)
+	void RectanEStats();
+
+    UFUNCTION(BlueprintCallable)
+ 	void PowerEStats();
+
+    UFUNCTION(BlueprintCallable)
+ 	void BoosterEStats();
 
 	// Variables inside the EditorPlayer
 	// Floats
@@ -175,10 +214,10 @@ public:
 	float LightBHealthCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Health")
-	float LightBRegenerationCPP = 25.0f;
+	float LightBHealthRegenerationCPP = 25.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Health")
-	float LightBRegendelayCPP = 75.0f;
+	float LightBHealthRegenDelayCPP = 75.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Shield")
 	float LightBShieldCPP = 50.0f;
@@ -207,10 +246,10 @@ public:
 	float HeavyBHealthCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Health")
-	float HeavyBRegenerationCPP = 50.0f;
+	float HeavyBHealthRegenerationCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Health")
-	float HeavyBRegendelayCPP = 50.0f;
+	float HeavyBHealthRegenDelayCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Shield")
 	float HeavyBShieldCPP = 60.0f;
@@ -239,10 +278,10 @@ public:
 	float TankBHealthCPP = 80.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Health")
-	float TankBRegenerationCPP = 75.0f;
+	float TankBHealthRegenerationCPP = 75.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Health")
-	float TankBRegendelayCPP = 25.0f;
+	float TankBHealthRegenDelayCPP = 25.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Shield")
 	float TankBShieldCPP = 80.0f;
@@ -363,7 +402,7 @@ public:
 	float MegaspeedWShieldCPP = -10.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|MegaspeedWings|Shield")
-	float MegaspeedWShieldRegenerationCPP = 0.0f;
+	float MegaSpeedWShieldRegenerationCPP = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Wings|MegaspeedWings|Shield")
 	float MegaspeedWShieldRegendelayCPP = 0.0f;
@@ -518,68 +557,62 @@ public:
 	// Wings
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Wings")
-	bool ButterflyWSelected = false;
+	bool DefenseWSelectedCPP = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Wings")
-	bool DefenseWSelected = false;
+	bool MegaSpeedWSelectedCPP = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Wings")
-	bool HeroWSelected = false;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Wings")
-	bool MegaSpeedWSelected = false;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Wings")
-	bool GunShipWSelected = true;
+	bool AgilityWSelectedCPP = true;
 
 	// Engines
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Engines")
-	bool RectanESelected = true;
+	bool RectanESelectedCPP = true;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Engines")
-	bool PowerESelected = false;
+	bool PowerESelectedCPP = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Engines")
-	bool BoosterESelected = false;
+	bool BoosterESelectedCPP = false;
 
 	// Bodies
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Bodies")
-	bool LightBSelected = false;
+	bool LightBSelectedCPP = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Bodies")
-	bool HeavyBSelected = true;
+	bool HeavyBSelectedCPP = true;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Bodies")
-	bool TankBSelected = false;
+	bool TankBSelectedCPP = false;
 
 	// Weapon Selected
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Guns")
-	bool LaserBatterySelected = true;
+	bool LaserBatterySelectedCPP = true;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Guns")
-	bool LaserCutterSelected = false;
+	bool LaserCutterSelectedCPP = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Guns")
-	bool KineticCannonSelected = true;
+	bool KineticCannonSelectedCPP = true;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Guns")
-	bool KineticMinigunSelected = false;
+	bool KineticMinigunSelectedCPP = false;
 
 	//Ability Selected 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Ability")
-	bool RollASelected = false;
+	bool RollASelectedCPP = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Ability")
-	bool MissileASelected = false;
+	bool MissileASelectedCPP = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Ability")
-	bool BoostASelected = false;
+	bool BoostASelectedCPP = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Ability")
-	bool RepairASelected = false;
+	bool RepairASelectedCPP = false;
 
 };
