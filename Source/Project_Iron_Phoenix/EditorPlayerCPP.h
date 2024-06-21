@@ -223,10 +223,10 @@ public:
 	float LightBShieldCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Shield")
-	float LightBShieldRegenerationCPP = 50.0f;
+	float LightBShieldRegenerationCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Shield")
-	float LightBShieldRegenDelayCPP = 50.0f;
+	float LightBShieldRegenDelayCPP = 30.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|LightBody|Speed")
 	float LightBSpeedCPP = 10.0f;
@@ -255,10 +255,10 @@ public:
 	float HeavyBShieldCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Shield")
-	float HeavyBShieldRegenerationCPP = 50.0f;
+	float HeavyBShieldRegenerationCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Shield")
-	float HeavyBShieldRegenDelayCPP = 60.0f;
+	float HeavyBShieldRegenDelayCPP = 50.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|HeavyBody|Speed")
 	float HeavyBSpeedCPP = 0.0f;
@@ -290,7 +290,7 @@ public:
 	float TankBShieldRegenerationCPP = 70.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Shield")
-	float TankBShieldRegenDelayCPP = 40.0f;
+	float TankBShieldRegenDelayCPP = 60.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ShipParts|Bodies|TankBody|Speed")
 	float TankBSpeedCPP = -10.0f;
