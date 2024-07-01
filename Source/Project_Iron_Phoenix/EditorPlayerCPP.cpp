@@ -164,8 +164,6 @@ void AEditorPlayerCPP::SpeedStats()
 
 void AEditorPlayerCPP::HeavyBStats()
 {   
-    HeavyBSelectedCPP = true;
-
     // Health Regeneration
     HealthRegenerationCPP = HeavyBHealthRegenerationCPP;
     HealthRegenDelayCPP = HeavyBHealthRegenDelayCPP;
