@@ -64,8 +64,6 @@ void AEditorPlayerCPP::SetEngines(bool bRectanESelected, bool bPowerESelected, b
 
 void AEditorPlayerCPP::AgilityStats()
 {
-    AgilityWSelectedCPP = true;
-
     if (LightBSelectedCPP)
     {   
         // Agility + Light Health/Shield/Speed/Roll
@@ -97,8 +95,6 @@ void AEditorPlayerCPP::AgilityStats()
 
 void AEditorPlayerCPP::DefenseStats()
 {
-    DefenseWSelectedCPP = true;
-
     if (LightBSelectedCPP)
     {   
         // Defense + Light Health/Shield/Speed/Roll
@@ -130,8 +126,6 @@ void AEditorPlayerCPP::DefenseStats()
 
 void AEditorPlayerCPP::SpeedStats()
 {
-    MegaSpeedWSelectedCPP = true;
-
     if (LightBSelectedCPP)
     {
         //  Megaspeed + Light Health/Shield/Speed/Roll
@@ -236,8 +230,6 @@ void AEditorPlayerCPP::HeavyBStats()
 
 void AEditorPlayerCPP::LightBStats()
 {
-    LightBSelectedCPP = true;
-
     // Health Regeneration
     HealthRegenerationCPP = LightBHealthRegenerationCPP;
     HealthRegenDelayCPP = LightBHealthRegenDelayCPP;
@@ -311,8 +303,6 @@ void AEditorPlayerCPP::LightBStats()
 
 void AEditorPlayerCPP::TankBStats()
 {
-    TankBSelectedCPP = true;
-
     // Health Regeneration
     HealthRegenerationCPP = TankBHealthRegenerationCPP;
     HealthRegenDelayCPP = TankBHealthRegenDelayCPP;
@@ -386,8 +376,6 @@ void AEditorPlayerCPP::TankBStats()
 
 void AEditorPlayerCPP::RectanEStats()
 {
-    RectanESelectedCPP = true;
-
     // Boost
     BoostCPP = RectanEBoostCPP;
     BoostMaxCPP = RectanEBoostMaxCPP;
@@ -440,9 +428,6 @@ void AEditorPlayerCPP::RectanEStats()
 
 void AEditorPlayerCPP::BoosterEStats()
 {
-
-    BoosterESelectedCPP = true;
-
     // Boost
     BoostCPP = BoosterEBoostCPP;
     BoostMaxCPP = BoosterEBoostMaxCPP;
@@ -495,8 +480,6 @@ void AEditorPlayerCPP::BoosterEStats()
 
 void AEditorPlayerCPP::PowerEStats()
 {
-    PowerESelectedCPP = true;
-
     // Boost
     BoostCPP = PowerEBoostCPP;
     BoostMaxCPP = PowerEBoostMaxCPP;
