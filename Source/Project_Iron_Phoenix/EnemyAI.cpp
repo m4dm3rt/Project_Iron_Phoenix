@@ -27,7 +27,6 @@ void AEnemyAI::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
-// Function to spawn a projectile
 void AEnemyAI::SpawnProjectile(TSubclassOf<AActor> ProjectileClass)
 {
 	if (ProjectileClass)
@@ -40,7 +39,6 @@ void AEnemyAI::SpawnProjectile(TSubclassOf<AActor> ProjectileClass)
 	}
 }
 
-// Function to move the pawn
 void AEnemyAI::MovePawn(FVector WorldDirection, float ScaleValue)
 {
 	AddMovementInput(WorldDirection, ScaleValue);
