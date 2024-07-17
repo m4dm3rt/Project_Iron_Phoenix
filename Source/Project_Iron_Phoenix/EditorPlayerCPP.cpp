@@ -99,7 +99,7 @@ void AEditorPlayerCPP::DefenseStats()
     {   
         // Defense + Light Health/Shield/Speed/Roll
         HealthCPP = DefenseWHealthCPP + LightBHealthCPP;
-        ShieldCPP =DefenseWShieldCPP + LightBShieldCPP;
+        ShieldCPP = DefenseWShieldCPP + LightBShieldCPP;
         TurnSpeedCPP = DefenseWTurnSpeedCPP;
         RollCPP =DefenseWRollCPP;
         RollCooldownCPP = DefenseWRollCooldownCPP;
@@ -130,7 +130,7 @@ void AEditorPlayerCPP::SpeedStats()
     {
         //  Megaspeed + Light Health/Shield/Speed/Roll
         HealthCPP = MegaspeedWHealthCPP + LightBHealthCPP;
-        ShieldCPP += MegaspeedWShieldCPP;
+        ShieldCPP = MegaspeedWShieldCPP + LightBShieldCPP;
         TurnSpeedCPP = MegaspeedWTurnSpeedCPP;
         RollCPP = MegaspeedWRollCPP;
         RollCooldownCPP = MegaspeedWRollCooldownCPP;
