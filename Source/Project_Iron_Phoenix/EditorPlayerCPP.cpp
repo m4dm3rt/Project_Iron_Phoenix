@@ -22,6 +22,12 @@ void AEditorPlayerCPP::Tick(float DeltaTime)
     void RectanEStats();
     void PowerEStats();
     void BoosterEStats();
+    void LaserBatteryStats();
+    void LaserCutterStats();
+    void LaserBeamStats();
+    void KineticCanonStats();
+    void KineticMinigunStats();
+    void KineticScattergunStats();
 }
 
 // Set Visible Event
@@ -527,4 +533,49 @@ void AEditorPlayerCPP::PowerEStats()
             StrafeSpeedCPP = PowerEStrafeCPP + TankBStrafeCPP;
         }
     } 
+}
+
+void AEditorPlayerCPP::LaserBatteryStats(){
+    LaserDamageCPP = LaserBatteryDamageCPP;
+    LaserFireRateCPP = LaserBatteryFireRateCPP;
+    LaserHeatCPP = LaserBatteryHeatCPP;
+    LaserCoolingCPP = LaserBatteryCoolingCPP;
+    LaserRangeCPP = LaserBatteryRangeCPP;
+
+}
+void AEditorPlayerCPP::LaserCutterStats(){
+    LaserDamageCPP = LaserCutterDamageCPP;
+    LaserFireRateCPP = LaserCutterFireRateCPP;
+    LaserHeatCPP = LaserCutterHeatCPP;
+    LaserCoolingCPP = LaserCutterCoolingCPP;
+    LaserRangeCPP = LaserCutterRangeCPP;
+}
+void AEditorPlayerCPP::LaserBeamStats(){
+    LaserDamageCPP = LaserBeamDamageCPP;
+    LaserFireRateCPP = LaserBeamFireRateCPP;
+    LaserHeatCPP = LaserBeamHeatCPP;
+    LaserCoolingCPP = LaserBeamCoolingCPP;
+    LaserRangeCPP = LaserBeamRangeCPP;
+}
+void AEditorPlayerCPP::KineticCanonStats(){
+    KineticDamageCPP = KineticCanonDamageCPP;
+    KineticFireRateCPP = KineticCanonFireRateCPP; 
+    KineticHeatCPP = KineticCanonHeatCPP;
+    KineticCoolingCPP = KineticCanonCoolingCPP;
+    KineticRangeCPP = KineticCanonRangeCPP; 
+}
+void AEditorPlayerCPP::KineticMinigunStats(){
+    KineticDamageCPP = KineticMinigunDamageCPP;
+    KineticFireRateCPP = KineticMinigunFireRateCPP; 
+    KineticHeatCPP = KineticMinigunHeatCPP;
+    KineticCoolingCPP = KineticMinigunCoolingCPP;
+    KineticRangeCPP = KineticMinigunRangeCPP; 
+
+}
+void AEditorPlayerCPP::KineticScattergunStats(){
+    KineticDamageCPP = KineticScattergunDamageCPP;
+    KineticFireRateCPP = KineticScattergunFireRateCPP; 
+    KineticHeatCPP = KineticScattergunHeatCPP;
+    KineticCoolingCPP = KineticScattergunCoolingCPP;
+    KineticRangeCPP = KineticScattergunRangeCPP; 
 }

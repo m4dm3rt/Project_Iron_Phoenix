@@ -71,6 +71,26 @@ public:
     UFUNCTION(BlueprintCallable)
  	void BoosterEStats();
 
+	//Gun Events
+
+	UFUNCTION(BlueprintCallable)
+	void LaserBatteryStats();
+
+    UFUNCTION(BlueprintCallable)
+ 	void LaserCutterStats();
+
+    UFUNCTION(BlueprintCallable)
+ 	void LaserBeamStats();
+
+	UFUNCTION(BlueprintCallable)
+	void KineticCanonStats();
+
+    UFUNCTION(BlueprintCallable)
+ 	void KineticMinigunStats();
+
+    UFUNCTION(BlueprintCallable)
+ 	void KineticScattergunStats();
+
 	// Variables inside the EditorPlayer
 	// Floats
 	// Health
@@ -480,6 +500,23 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserCutter")
 	float LaserCutterCoolingCPP = 40.0f;
 
+	// Laser Beam
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserBeam")
+	float LaserBeamDamageCPP = 340.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserBeam")
+	float LaserBeamRangeCPP = 90.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserBeam")
+	float LaserBeamFireRateCPP = 30.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserBeam")
+	float LaserBeamHeatCPP = 90.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|LaserBeam")
+	float LaserBeamCoolingCPP = 30.0f;
+
 	// Kinetic Canon
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticCanon")
@@ -513,6 +550,23 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticMinigun")
 	float KineticMinigunCoolingCPP = 40.0f;
+
+	// Kinetic Scattergun
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticScattergun")
+	float KineticScattergunDamageCPP = 9.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticScattergun")
+	float KineticScattergunRangeCPP = 30.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticScattergun")
+	float KineticScattergunFireRateCPP = 2.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticScattergun")
+	float KineticScattergunHeatCPP = 120.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponTypes|KineticScattergun")
+	float KineticScattergunCoolingCPP = 15.0f;
 
 	// Missile
 
@@ -596,10 +650,16 @@ public:
 	bool LaserCutterSelectedCPP = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Guns")
+	bool LaserBeamSelectedCPP = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Guns")
 	bool KineticCannonSelectedCPP = true;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Guns")
 	bool KineticMinigunSelectedCPP = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Guns")
+	bool KineticScattergunSelectedCPP = false;
 
 	//Ability Selected 
 
