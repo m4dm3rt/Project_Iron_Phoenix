@@ -75,6 +75,8 @@ void AEditorPlayerCPP::AgilityStats()
         // Agility + Light Health/Shield/Speed/Roll
         HealthCPP = AgilityWHealthCPP + LightBHealthCPP;
         ShieldCPP = AgilityWShieldCPP + LightBShieldCPP;
+        ShieldRegenerationCPP = LightBShieldRegenerationCPP + AgilityWShieldRegenerationCPP;
+        ShieldRegenDelayCPP = LightBHealthRegenDelayCPP + AgilityWShieldRegendelayCPP;
         TurnSpeedCPP = AgilityWTurnSpeedCPP;
         RollCPP = AgilityWRollCPP;
         RollCooldownCPP = AgilityWRollCooldownCPP;
@@ -84,6 +86,8 @@ void AEditorPlayerCPP::AgilityStats()
         // Agility + Tank Health/Shield/Speed/Roll
         HealthCPP = AgilityWHealthCPP + TankBHealthCPP;
         ShieldCPP = AgilityWShieldCPP + TankBShieldCPP;
+        ShieldRegenerationCPP = TankBShieldRegenerationCPP + AgilityWShieldRegenerationCPP;
+        ShieldRegenDelayCPP = TankBHealthRegenDelayCPP + AgilityWShieldRegendelayCPP;
         TurnSpeedCPP = AgilityWTurnSpeedCPP;
         RollCPP = AgilityWRollCPP;
         RollCooldownCPP = AgilityWRollCooldownCPP;
@@ -93,6 +97,8 @@ void AEditorPlayerCPP::AgilityStats()
         // Agility + Heavy Health/Shield/Speed/Roll
         HealthCPP = AgilityWHealthCPP + HeavyBHealthCPP;
         ShieldCPP = AgilityWShieldCPP + HeavyBShieldCPP;
+        ShieldRegenerationCPP = HeavyBShieldRegenerationCPP + AgilityWShieldRegenerationCPP;
+        ShieldRegenDelayCPP = HeavyBHealthRegenDelayCPP + AgilityWShieldRegendelayCPP;
         TurnSpeedCPP = AgilityWTurnSpeedCPP;
         RollCPP = AgilityWRollCPP;
         RollCooldownCPP = AgilityWRollCooldownCPP;
@@ -106,6 +112,8 @@ void AEditorPlayerCPP::DefenseStats()
         // Defense + Light Health/Shield/Speed/Roll
         HealthCPP = DefenseWHealthCPP + LightBHealthCPP;
         ShieldCPP = DefenseWShieldCPP + LightBShieldCPP;
+        ShieldRegenerationCPP = LightBShieldRegenerationCPP + DefenseWShieldRegenerationCPP;
+        ShieldRegenDelayCPP = LightBHealthRegenDelayCPP + DefenseWShieldRegendelayCPP;
         TurnSpeedCPP = DefenseWTurnSpeedCPP;
         RollCPP =DefenseWRollCPP;
         RollCooldownCPP = DefenseWRollCooldownCPP;
@@ -115,6 +123,8 @@ void AEditorPlayerCPP::DefenseStats()
         // Defense + Tank Health/Shield/Speed/Roll
         HealthCPP = DefenseWHealthCPP + TankBHealthCPP;
         ShieldCPP = DefenseWShieldCPP + TankBShieldCPP;
+        ShieldRegenerationCPP = TankBShieldRegenerationCPP + DefenseWShieldRegenerationCPP;
+        ShieldRegenDelayCPP = TankBHealthRegenDelayCPP +  DefenseWShieldRegendelayCPP;
         TurnSpeedCPP = DefenseWTurnSpeedCPP;
         RollCPP = DefenseWRollCPP;
         RollCooldownCPP = DefenseWRollCooldownCPP;
@@ -124,6 +134,8 @@ void AEditorPlayerCPP::DefenseStats()
         // Defense + Heavy Health/Shield/Speed/Roll
         HealthCPP = DefenseWHealthCPP + HeavyBHealthCPP;
         ShieldCPP = DefenseWShieldCPP + HeavyBShieldCPP;
+        ShieldRegenerationCPP = HeavyBShieldRegenerationCPP + DefenseWShieldRegenerationCPP;
+        ShieldRegenDelayCPP = HeavyBHealthRegenDelayCPP + DefenseWShieldRegendelayCPP;
         TurnSpeedCPP = DefenseWTurnSpeedCPP;
         RollCPP = DefenseWRollCPP;
         RollCooldownCPP = DefenseWRollCooldownCPP;
@@ -137,6 +149,8 @@ void AEditorPlayerCPP::SpeedStats()
         //  Megaspeed + Light Health/Shield/Speed/Roll
         HealthCPP = MegaspeedWHealthCPP + LightBHealthCPP;
         ShieldCPP = MegaspeedWShieldCPP + LightBShieldCPP;
+        ShieldRegenerationCPP = LightBShieldRegenerationCPP +  MegaSpeedWShieldRegenerationCPP;
+        ShieldRegenDelayCPP = LightBHealthRegenDelayCPP +  MegaspeedWShieldRegendelayCPP;
         TurnSpeedCPP = MegaspeedWTurnSpeedCPP;
         RollCPP = MegaspeedWRollCPP;
         RollCooldownCPP = MegaspeedWRollCooldownCPP;
@@ -146,6 +160,8 @@ void AEditorPlayerCPP::SpeedStats()
         //  Megaspeed + Tank Health/Shield/Speed/Roll
         HealthCPP = MegaspeedWHealthCPP + TankBHealthCPP;
         ShieldCPP = MegaspeedWShieldCPP + TankBShieldCPP;
+        ShieldRegenerationCPP = TankBShieldRegenerationCPP +  MegaSpeedWShieldRegenerationCPP;
+        ShieldRegenDelayCPP = TankBHealthRegenDelayCPP +   MegaspeedWShieldRegendelayCPP;
         TurnSpeedCPP = MegaspeedWTurnSpeedCPP;
         RollCPP = MegaspeedWRollCPP;
         RollCooldownCPP = MegaspeedWRollCooldownCPP;
@@ -155,6 +171,8 @@ void AEditorPlayerCPP::SpeedStats()
         //  Megaspeed + Heavy Health/Shield/Speed/Roll
         HealthCPP = MegaspeedWHealthCPP + HeavyBHealthCPP;
         ShieldCPP = MegaspeedWShieldCPP + HeavyBShieldCPP;
+        ShieldRegenerationCPP = HeavyBShieldRegenerationCPP +  MegaSpeedWShieldRegenerationCPP;
+        ShieldRegenDelayCPP = HeavyBHealthRegenDelayCPP +  MegaspeedWShieldRegendelayCPP;
         TurnSpeedCPP = MegaspeedWTurnSpeedCPP;
         RollCPP = MegaspeedWRollCPP;
         RollCooldownCPP = MegaspeedWRollCooldownCPP;
