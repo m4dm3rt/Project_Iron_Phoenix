@@ -43,29 +43,6 @@ void AEditorPlayerCPP::SetComponentsVisibility(TArray<USceneComponent*> TargetCo
     }
 }
 
-//Set Booleans Events
-
-void AEditorPlayerCPP::SetBodies(bool bLightBSelected, bool bHeavyBSelected, bool bTankBSelected)
-{
-    LightBSelectedCPP = bLightBSelected;
-    HeavyBSelectedCPP = bHeavyBSelected;
-    TankBSelectedCPP = bTankBSelected;
-}
-
-void AEditorPlayerCPP::SetWings(bool bDefenseWSelected, bool bMegaSpeedWSelected, bool bAgilityWSelected)
-{
-    DefenseWSelectedCPP = bDefenseWSelected;
-    MegaSpeedWSelectedCPP = bMegaSpeedWSelected;
-    AgilityWSelectedCPP = bAgilityWSelected;
-}
-
-void AEditorPlayerCPP::SetEngines(bool bRectanESelected, bool bPowerESelected, bool bBoosterESelected)
-{
-    RectanESelectedCPP = bRectanESelected;
-    PowerESelectedCPP = bPowerESelected;
-    BoosterESelectedCPP = bBoosterESelected;
-}
-
 // Editor Player Stats
 
 void AEditorPlayerCPP::AgilityStats()
@@ -76,10 +53,18 @@ void AEditorPlayerCPP::AgilityStats()
         HealthCPP = AgilityWHealthCPP + LightBHealthCPP;
         ShieldCPP = AgilityWShieldCPP + LightBShieldCPP;
         ShieldRegenerationCPP = LightBShieldRegenerationCPP + AgilityWShieldRegenerationCPP;
-        ShieldRegenDelayCPP = LightBHealthRegenDelayCPP + AgilityWShieldRegendelayCPP;
+        ShieldRegenDelayCPP = LightBShieldRegenDelayCPP + AgilityWShieldRegendelayCPP;
         TurnSpeedCPP = AgilityWTurnSpeedCPP;
         RollCPP = AgilityWRollCPP;
         RollCooldownCPP = AgilityWRollCooldownCPP;
+
+        if (BoosterESelectedCPP) {
+            SpeedCPP = LightBSpeedCPP + BoosterESpeedCPP + AgilityWSpeedCPP;
+        } else if (RectanESelectedCPP) {
+            SpeedCPP = LightBSpeedCPP + RectanESpeedCPP + AgilityWSpeedCPP;
+        } else if (PowerESelectedCPP) {
+            SpeedCPP = LightBSpeedCPP + PowerESpeedCPP + AgilityWSpeedCPP;
+        }
     }
     else if (TankBSelectedCPP)
     {
@@ -87,10 +72,18 @@ void AEditorPlayerCPP::AgilityStats()
         HealthCPP = AgilityWHealthCPP + TankBHealthCPP;
         ShieldCPP = AgilityWShieldCPP + TankBShieldCPP;
         ShieldRegenerationCPP = TankBShieldRegenerationCPP + AgilityWShieldRegenerationCPP;
-        ShieldRegenDelayCPP = TankBHealthRegenDelayCPP + AgilityWShieldRegendelayCPP;
+        ShieldRegenDelayCPP = TankBShieldRegenDelayCPP + AgilityWShieldRegendelayCPP;
         TurnSpeedCPP = AgilityWTurnSpeedCPP;
         RollCPP = AgilityWRollCPP;
         RollCooldownCPP = AgilityWRollCooldownCPP;
+
+        if (BoosterESelectedCPP) {
+            SpeedCPP = TankBSpeedCPP + BoosterESpeedCPP + AgilityWSpeedCPP;
+        } else if (RectanESelectedCPP) {
+            SpeedCPP = TankBSpeedCPP + RectanESpeedCPP + AgilityWSpeedCPP;
+        } else if (PowerESelectedCPP) {
+            SpeedCPP = TankBSpeedCPP + PowerESpeedCPP + AgilityWSpeedCPP;
+        }
     }
     else if (HeavyBSelectedCPP)
     {
@@ -98,10 +91,18 @@ void AEditorPlayerCPP::AgilityStats()
         HealthCPP = AgilityWHealthCPP + HeavyBHealthCPP;
         ShieldCPP = AgilityWShieldCPP + HeavyBShieldCPP;
         ShieldRegenerationCPP = HeavyBShieldRegenerationCPP + AgilityWShieldRegenerationCPP;
-        ShieldRegenDelayCPP = HeavyBHealthRegenDelayCPP + AgilityWShieldRegendelayCPP;
+        ShieldRegenDelayCPP = HeavyBShieldRegenDelayCPP + AgilityWShieldRegendelayCPP;
         TurnSpeedCPP = AgilityWTurnSpeedCPP;
         RollCPP = AgilityWRollCPP;
         RollCooldownCPP = AgilityWRollCooldownCPP;
+
+        if (BoosterESelectedCPP) {
+            SpeedCPP = HeavyBSpeedCPP + BoosterESpeedCPP + AgilityWSpeedCPP;
+        } else if (RectanESelectedCPP) {
+            SpeedCPP = HeavyBSpeedCPP + RectanESpeedCPP + AgilityWSpeedCPP;
+        } else if (PowerESelectedCPP) {
+            SpeedCPP = HeavyBSpeedCPP + PowerESpeedCPP + AgilityWSpeedCPP;
+        }
     }
 }
 
@@ -112,33 +113,58 @@ void AEditorPlayerCPP::DefenseStats()
         // Defense + Light Health/Shield/Speed/Roll
         HealthCPP = DefenseWHealthCPP + LightBHealthCPP;
         ShieldCPP = DefenseWShieldCPP + LightBShieldCPP;
-        ShieldRegenerationCPP = LightBShieldRegenerationCPP + DefenseWShieldRegenerationCPP;
-        ShieldRegenDelayCPP = LightBHealthRegenDelayCPP + DefenseWShieldRegendelayCPP;
+        ShieldRegenerationCPP = DefenseWShieldRegenerationCPP + LightBShieldRegenerationCPP;
+        ShieldRegenDelayCPP = DefenseWShieldRegendelayCPP + LightBShieldRegenDelayCPP;
         TurnSpeedCPP = DefenseWTurnSpeedCPP;
         RollCPP =DefenseWRollCPP;
         RollCooldownCPP = DefenseWRollCooldownCPP;
+        
+        if (BoosterESelectedCPP) {
+            SpeedCPP = LightBSpeedCPP + BoosterESpeedCPP + DefenseWSpeedCPP;
+        } else if (RectanESelectedCPP) {
+            SpeedCPP = LightBSpeedCPP + RectanESpeedCPP + DefenseWSpeedCPP;
+        } else if (PowerESelectedCPP) {
+            SpeedCPP = LightBSpeedCPP + PowerESpeedCPP + DefenseWSpeedCPP;
+        }
     }
+
     else if (TankBSelectedCPP)
     {
         // Defense + Tank Health/Shield/Speed/Roll
         HealthCPP = DefenseWHealthCPP + TankBHealthCPP;
         ShieldCPP = DefenseWShieldCPP + TankBShieldCPP;
-        ShieldRegenerationCPP = TankBShieldRegenerationCPP + DefenseWShieldRegenerationCPP;
-        ShieldRegenDelayCPP = TankBHealthRegenDelayCPP +  DefenseWShieldRegendelayCPP;
+        ShieldRegenerationCPP = DefenseWShieldRegenerationCPP + TankBShieldRegenerationCPP;
+        ShieldRegenDelayCPP = DefenseWShieldRegendelayCPP + TankBShieldRegenDelayCPP;
         TurnSpeedCPP = DefenseWTurnSpeedCPP;
         RollCPP = DefenseWRollCPP;
         RollCooldownCPP = DefenseWRollCooldownCPP;
+
+        if (BoosterESelectedCPP) {
+            SpeedCPP = TankBSpeedCPP + BoosterESpeedCPP + DefenseWSpeedCPP;
+        } else if (RectanESelectedCPP) {
+            SpeedCPP = TankBSpeedCPP + RectanESpeedCPP + DefenseWSpeedCPP;
+        } else if (PowerESelectedCPP) {
+            SpeedCPP = TankBSpeedCPP + PowerESpeedCPP + DefenseWSpeedCPP;
+        }
     }
     else if (HeavyBSelectedCPP)
     {
         // Defense + Heavy Health/Shield/Speed/Roll
         HealthCPP = DefenseWHealthCPP + HeavyBHealthCPP;
         ShieldCPP = DefenseWShieldCPP + HeavyBShieldCPP;
-        ShieldRegenerationCPP = HeavyBShieldRegenerationCPP + DefenseWShieldRegenerationCPP;
-        ShieldRegenDelayCPP = HeavyBHealthRegenDelayCPP + DefenseWShieldRegendelayCPP;
+        ShieldRegenerationCPP = DefenseWShieldRegenerationCPP + HeavyBShieldRegenerationCPP;
+        ShieldRegenDelayCPP = DefenseWShieldRegendelayCPP + HeavyBShieldRegenDelayCPP;
         TurnSpeedCPP = DefenseWTurnSpeedCPP;
         RollCPP = DefenseWRollCPP;
         RollCooldownCPP = DefenseWRollCooldownCPP;
+
+        if (BoosterESelectedCPP) {
+            SpeedCPP = HeavyBSpeedCPP + BoosterESpeedCPP + DefenseWSpeedCPP;
+        } else if (RectanESelectedCPP) {
+            SpeedCPP = HeavyBSpeedCPP + RectanESpeedCPP + DefenseWSpeedCPP;
+        } else if (PowerESelectedCPP) {
+            SpeedCPP = HeavyBSpeedCPP + PowerESpeedCPP + DefenseWSpeedCPP;
+        }
     }
 }
 
@@ -149,33 +175,57 @@ void AEditorPlayerCPP::SpeedStats()
         //  Megaspeed + Light Health/Shield/Speed/Roll
         HealthCPP = MegaspeedWHealthCPP + LightBHealthCPP;
         ShieldCPP = MegaspeedWShieldCPP + LightBShieldCPP;
-        ShieldRegenerationCPP = LightBShieldRegenerationCPP +  MegaSpeedWShieldRegenerationCPP;
-        ShieldRegenDelayCPP = LightBHealthRegenDelayCPP +  MegaspeedWShieldRegendelayCPP;
+        ShieldRegenerationCPP = MegaSpeedWShieldRegenerationCPP + LightBShieldRegenerationCPP;
+        ShieldRegenDelayCPP = MegaspeedWShieldRegendelayCPP + LightBShieldRegenDelayCPP;
         TurnSpeedCPP = MegaspeedWTurnSpeedCPP;
         RollCPP = MegaspeedWRollCPP;
         RollCooldownCPP = MegaspeedWRollCooldownCPP;
+
+        if (BoosterESelectedCPP) {
+            SpeedCPP = LightBSpeedCPP + BoosterESpeedCPP + MegaspeedWSpeedCPP;
+        } else if (RectanESelectedCPP) {
+            SpeedCPP = LightBSpeedCPP + RectanESpeedCPP + MegaspeedWSpeedCPP;
+        } else if (PowerESelectedCPP) {
+            SpeedCPP = LightBSpeedCPP + PowerESpeedCPP + MegaspeedWSpeedCPP;
+        }
     }
     else if (TankBSelectedCPP)
     {
         //  Megaspeed + Tank Health/Shield/Speed/Roll
         HealthCPP = MegaspeedWHealthCPP + TankBHealthCPP;
         ShieldCPP = MegaspeedWShieldCPP + TankBShieldCPP;
-        ShieldRegenerationCPP = TankBShieldRegenerationCPP +  MegaSpeedWShieldRegenerationCPP;
-        ShieldRegenDelayCPP = TankBHealthRegenDelayCPP +   MegaspeedWShieldRegendelayCPP;
+        ShieldRegenerationCPP = MegaSpeedWShieldRegenerationCPP + TankBShieldRegenerationCPP;
+        ShieldRegenDelayCPP = MegaspeedWShieldRegendelayCPP + TankBShieldRegenDelayCPP;
         TurnSpeedCPP = MegaspeedWTurnSpeedCPP;
         RollCPP = MegaspeedWRollCPP;
         RollCooldownCPP = MegaspeedWRollCooldownCPP;
+
+        if (BoosterESelectedCPP) {
+            SpeedCPP = TankBSpeedCPP + BoosterESpeedCPP + MegaspeedWSpeedCPP;
+        } else if (RectanESelectedCPP) {
+            SpeedCPP = TankBSpeedCPP + RectanESpeedCPP + MegaspeedWSpeedCPP;
+        } else if (PowerESelectedCPP) {
+            SpeedCPP = TankBSpeedCPP + PowerESpeedCPP + MegaspeedWSpeedCPP;
+        }
     }
     else if (HeavyBSelectedCPP)
     {
         //  Megaspeed + Heavy Health/Shield/Speed/Roll
         HealthCPP = MegaspeedWHealthCPP + HeavyBHealthCPP;
         ShieldCPP = MegaspeedWShieldCPP + HeavyBShieldCPP;
-        ShieldRegenerationCPP = HeavyBShieldRegenerationCPP +  MegaSpeedWShieldRegenerationCPP;
-        ShieldRegenDelayCPP = HeavyBHealthRegenDelayCPP +  MegaspeedWShieldRegendelayCPP;
+        ShieldRegenerationCPP = MegaSpeedWShieldRegenerationCPP + HeavyBShieldRegenerationCPP;
+        ShieldRegenDelayCPP = MegaspeedWShieldRegendelayCPP + HeavyBShieldRegenDelayCPP;
         TurnSpeedCPP = MegaspeedWTurnSpeedCPP;
         RollCPP = MegaspeedWRollCPP;
         RollCooldownCPP = MegaspeedWRollCooldownCPP;
+
+        if (BoosterESelectedCPP) {
+            SpeedCPP = HeavyBSpeedCPP + BoosterESpeedCPP + MegaspeedWSpeedCPP;
+        } else if (RectanESelectedCPP) {
+            SpeedCPP = HeavyBSpeedCPP + RectanESpeedCPP + MegaspeedWSpeedCPP;
+        } else if (PowerESelectedCPP) {
+            SpeedCPP = HeavyBSpeedCPP + PowerESpeedCPP + MegaspeedWSpeedCPP;
+        }
     }
 }
 
