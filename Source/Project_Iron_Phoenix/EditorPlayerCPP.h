@@ -642,7 +642,7 @@ public:
 	bool LaserBeamSelectedCPP = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Guns")
-	bool KineticCannonSelectedCPP = true;
+	bool KineticCanonSelectedCPP = true;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Save/Load|Guns")
 	bool KineticMinigunSelectedCPP = false;
