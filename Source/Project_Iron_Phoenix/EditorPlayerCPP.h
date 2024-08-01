@@ -27,17 +27,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components")	
     TArray<UStaticMeshComponent*> MeshComponents;
 
-	// Set Booleans
-
-	UFUNCTION(BlueprintCallable, Category = "Save/Load|Bodies")
-    void SetBodies(bool bLightBSelected, bool bHeavyBSelected, bool bTankBSelected);
-
-	UFUNCTION(BlueprintCallable, Category = "Save/Load|Wings")
-    void SetWings(bool bDefenseWSelected, bool bMegaSpeedWSelected, bool bAgilityWSelected);
-
-	UFUNCTION(BlueprintCallable, Category = "Save/Load|Engines")
-    void SetEngines(bool bRectanESelected, bool bPowerESelected, bool bBoosterESelected);
-
 	//Wing Events
 
 	UFUNCTION(BlueprintCallable)
