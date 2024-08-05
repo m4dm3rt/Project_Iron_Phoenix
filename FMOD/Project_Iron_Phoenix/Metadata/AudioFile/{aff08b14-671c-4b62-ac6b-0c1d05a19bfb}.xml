@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{aff08b14-671c-4b62-ac6b-0c1d05a19bfb}">
+		<property name="assetPath">
+			<value>Music_001_Simulation_INTROSFX_v4.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>15.519541666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0be45410-3398-4be2-aa36-4c3e29bf2270}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f3d4d9ba-a078-4c46-a82e-3cd0e83be85a}">
+		<property name="assetPath">
+			<value>Music_001_Simulation_FLOATING_v3.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>298.00489795918367</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0be45410-3398-4be2-aa36-4c3e29bf2270}</destination>
+		</relationship>
+	</object>
+</objects>

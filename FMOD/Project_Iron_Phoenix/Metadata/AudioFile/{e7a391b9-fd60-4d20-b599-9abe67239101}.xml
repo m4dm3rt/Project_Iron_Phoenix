@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e7a391b9-fd60-4d20-b599-9abe67239101}">
+		<property name="assetPath">
+			<value>SFX_053_Weap_LaserBattery_Shoot_v02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.2547916666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0be45410-3398-4be2-aa36-4c3e29bf2270}</destination>
+		</relationship>
+	</object>
+</objects>

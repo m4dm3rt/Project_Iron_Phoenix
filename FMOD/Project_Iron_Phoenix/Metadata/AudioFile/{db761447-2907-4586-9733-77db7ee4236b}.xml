@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{db761447-2907-4586-9733-77db7ee4236b}">
+		<property name="assetPath">
+			<value>SFX_Level_Up_v1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.6100000000000003</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0be45410-3398-4be2-aa36-4c3e29bf2270}</destination>
+		</relationship>
+	</object>
+</objects>

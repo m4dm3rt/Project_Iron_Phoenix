@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1634284e-17be-4c85-9c5c-207aa9f9251c}">
+		<property name="assetPath">
+			<value>ROBOTIC_Servo_Medium_Malfunction_04_Damaged_Movement_mono.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.59387755102040818</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0be45410-3398-4be2-aa36-4c3e29bf2270}</destination>
+		</relationship>
+	</object>
+</objects>
