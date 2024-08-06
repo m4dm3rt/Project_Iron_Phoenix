@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{70cffd37-acb5-4a2a-873e-774a9948f37d}">
+		<property name="name">
+			<value>lasercharging</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b2dfb9d3-cce0-4edc-815c-fe97d7d8d3f5}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e8dae26e-9162-4813-b926-18a0f2ca6ee2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e8dae26e-9162-4813-b926-18a0f2ca6ee2}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.34999999403953552</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>0.81000000238418579</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
