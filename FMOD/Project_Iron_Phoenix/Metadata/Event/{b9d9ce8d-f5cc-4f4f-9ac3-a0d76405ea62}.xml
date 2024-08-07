@@ -578,6 +578,7 @@
 			<destination>{a1453bcb-0bbf-45d8-9ce7-c0d832eb7a23}</destination>
 			<destination>{16cb941b-62c9-4e18-9aed-6690f5828c4a}</destination>
 			<destination>{95b7bb07-643a-4f94-8f1a-3b462af07ef7}</destination>
+			<destination>{5e6f4956-1060-461f-b715-dab65a16fa45}</destination>
 			<destination>{6374e53e-0ebe-4099-84d1-f0ab55d64dcc}</destination>
 			<destination>{eb9b3ea3-7ad1-4249-a250-e56663cb3eb1}</destination>
 		</relationship>
@@ -757,6 +758,7 @@
 		<relationship name="effects">
 			<destination>{372a5148-3dca-4fca-bdff-264e303fa0c7}</destination>
 			<destination>{59204d07-9cbe-4a69-b5e3-7c722bb4c0af}</destination>
+			<destination>{ea1cab41-5787-4f9c-af1d-5ee19f554043}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{0fe2a12c-ede3-4f40-9611-96cf4a990506}" />
@@ -817,6 +819,11 @@
 		<relationship name="automators">
 			<destination>{48c2fb1d-b4c6-44f0-b491-cf5f963a4bb5}</destination>
 		</relationship>
+	</object>
+	<object class="ThreeEQEffect" id="{5e6f4956-1060-461f-b715-dab65a16fa45}">
+		<property name="highGain">
+			<value>-3</value>
+		</property>
 	</object>
 	<object class="MixerBusFader" id="{6374e53e-0ebe-4099-84d1-f0ab55d64dcc}" />
 	<object class="ProxyEffect" id="{eb9b3ea3-7ad1-4249-a250-e56663cb3eb1}">
@@ -1108,6 +1115,11 @@
 		<relationship name="automators">
 			<destination>{f5000210-18df-46f6-93b3-fa3ddc6247c9}</destination>
 		</relationship>
+	</object>
+	<object class="ThreeEQEffect" id="{ea1cab41-5787-4f9c-af1d-5ee19f554043}">
+		<property name="highGain">
+			<value>-5.5</value>
+		</property>
 	</object>
 	<object class="MixerBusFader" id="{f7b34e8f-924d-463b-838b-e49ab9e785fa}" />
 	<object class="AutomationPoint" id="{e4c2f1b7-303e-4487-9f51-f6b069c17b6f}">
