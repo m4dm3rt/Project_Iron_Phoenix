@@ -641,7 +641,7 @@ void AEditorPlayerCPP::KineticMinigunStats(){
 
 }
 void AEditorPlayerCPP::KineticScattergunStats(){
-    KineticDamageCPP = KineticScattergunDamageCPP;
+    KineticDamageCPP = KineticScattergunDamageCPP * GunDamageMultiplierCPP;
     KineticFireRateCPP = KineticScattergunFireRateCPP; 
     KineticHeatCPP = KineticScattergunHeatCPP;
     KineticCoolingCPP = KineticScattergunCoolingCPP;

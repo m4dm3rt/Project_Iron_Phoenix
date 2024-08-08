@@ -215,6 +215,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
 	float MissileCooldownMultiplierCPP = 3.11f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Multiplier")
+	float GunDamageMultiplierCPP = 10.0f;
+
 	// Ship Parts
 	// Bodies
 	// Light Body
